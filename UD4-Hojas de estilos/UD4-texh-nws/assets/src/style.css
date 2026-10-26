@@ -32,17 +32,34 @@ Autor: Mar
     flex-direction: column;
  }
 
+ /*Imagenes responsive*/
  img{
     width: 100%;
     object-fit: cover;
  }
 
+ /*Para ocultar texto de un boton*/
  .sr-only{
     position: absolute;
     left: -100vw;
  }
+ /*le quitamos el*/
+ nav ul {
+   list-style: none;
+ }
 
+ .btn{
+   padding: 1rem 1.5rem;
+   text-decoration: none;
+   color: var(--color-secundario);
+   background-color: var(--color-terciario);
+   border: 1px solid var(--color-secundario);
+ }
 
+ .icono{
+   max-width: 32px;
+   display: incline-block;
+ }
  /*=========================================
  =              Estilos del header         =
  ===========================================*/
@@ -50,7 +67,7 @@ Autor: Mar
     padding: 1rem;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap; /*Para cuando la pantalla sea mas pequeña las cosas van para abajo*/
     justify-content: space-between;
     align-items: center;
  }
@@ -67,6 +84,8 @@ Autor: Mar
 
  .menu ul{
     display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 
  }
 
@@ -84,16 +103,144 @@ Autor: Mar
  ===========================================*/
 main{
     padding: 1rem;
-    flex: 1;
+    flex: 1; /*es lo mismo que flex-grow: 1;*/
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
+
+/*------------------ Estilos de Portada   -------------------*/
 #portada{
     padding-bottom: 1rem;
 }
 
+#portada h2{
+   font-size: 2rem;
+   font-weight: 800;
+   text-transform: capitalize;
+   color: var(--color-secundario);
+}
 
 
 
+/*------------------ Estilos de Portada   -------------------*/
+
+
+#novedades{
+   padding: 2rem;
+   background-color: var(--color-secundario);
+   color: var(--color-texto-secundario);
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   font-size: .9rem;
+}
+
+#novedades h2{
+   color:var(--color-titulo-2);
+   font-size: 1.3rem;
+   font-weight: 800;
+   text-transform: capitalize;
+}
+
+#novedades article h3 a{
+   color: white;
+   text-decoration: none;
+}
+
+#novedad article:not(first-of-type){ /*Todos menos el primero*/
+   border-top: 1px solid; 
+}
+
+
+/*====== End of Estilos del main ======*/
+
+
+/*=========================================
+ =              Estilos de las cards         =
+ ===========================================*/
+
+
+ .cards{
+   display: flex;
+   /*flex-direction: column; PERO EN REALIDAD NO nos hace falta, pone uno debajo de otro*/ 
+   justify-content: center;
+ }
+/*.card es todo el UL y el singular son los LI*/
+ .card{
+   max-width: 450px; /*Para que la caja no sea muy grande*/
+   display: flex;
+   align-items: center; /*Para centrar el texto*/
+   gap: 1rem;
+ }
+
+ .card figure{
+   /*max-width: 200px;
+   max-height: 254px;*/
+   width: 30%;
+   overflow: hidden;
+ }
+
+ .card-content{
+   width: 70%; /*Porque es mas como pero por ende se tiene que cambiar a porcentaje en lo que es las cads*/
+ }
+
+ .card .numero{
+   color: var(--color-terciario);
+   font-size: 2rem;
+   font-weight: 700;
+ }
+
+ .card .titulo {
+   font-size: 1.2rem;
+   font-weight: 700;
+   color: var(--color-secundario);
+ }
+
+
+/*====== End of Estilos del main ======*/
+
+/*=========================================
+ =              Estilos de las footer         =
+ ===========================================*/
+
+footer{
+   display: flex;
+   flex-direction: colum-reverse;
+   align-items: center;
+}
+
+.redes{
+   list-style: none;
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+/*====== End of Estilos del footer ======*/
+
+
+/*=========================================
+ =              Estilos de las queries         =
+ ===========================================*/
+
+ @media screen and (min-width: 1024px){
+   body{
+      max-width: 1440px;
+      margin: 0 auto;
+   }
+
+   .main-cabecera{
+      display: flex;
+      gap: 2rem;
+   }
+   #portada{
+      width: 70%;
+   }
+
+   #novedades{
+      width: 30%;
+   }
+
+ }
