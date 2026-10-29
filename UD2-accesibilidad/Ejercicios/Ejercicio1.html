@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
- <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Ejercicio 1.1 - Sin Corregir</title>
 </head>
 
+<body>
   <header class="header">
     <img src="./image/LogoEstudio.png" class="logo" alt="">
-    <h2>Estudios Shonos</h2>
-</header>
-
-<main>
-
-    <h2>Cursos más demandados</h2>
+    <h1>Estudios Shonos</h1>
+  </header>
+  <main>
     <section>
-      <article>
-  <div class="card-container">
-    <div class="card">
-     <img src="image/curso-web.jpg" alt="Estudiante trabajando con un lector de pantalla en un ordenador portátil">
-      <div class="card-body">
-        <h4>Curso de Accesibilidad</h4>
-      <p>Aprende a maquetar sitios web inclusivos desde cero siguiendo las pautas WCAG 2.1.</p>
-      <a href="#" class="btn-more">Saber más</a>
-      </div>
-    </div>
-    </article>
-    <article>
-    <div class="card">
-      <img src="image/curso-css.jpg" alt="Pantalla de código CSS mostrando estilos de interfaz">
-          <div style="font-weight: bold; font-size: 18px;">Curso de CSS Avanzado</div>
-      <p>Domina CSS Grid, Flexbox, variables CSS y animaciones fluidas para web.</p>
-      <a href="#" class="btn-more">Saber más</a>
-    </div>
-</div>
-</article>
-</section>
-</main>
+      <h2>Cursos más demandados</h2>
+      <ul class="card-container">
+        <li class="card">
+          <img src="image/curso-web.jpg" alt="Estudiante trabajando con un lector de pantalla en un ordenador portátil">
+          <div class="card-body">
+            <h3>Curso de Accesibilidad</h3>
+            <p>Aprende a maquetar sitios web inclusivos desde cero siguiendo las pautas WCAG 2.1.</p>
+            <a href="#" class="btn-more">Saber más</a>
+          </div>
+        </li>
+        <li class="card">
+          <img src="image/curso-css.jpg" alt="Pantalla de código CSS mostrando estilos de interfaz">
+          <div class="card-body">
+            <h3>Curso de CSS Avanzado</h3>
+            <p>Domina CSS Grid, Flexbox, variables CSS y animaciones fluidas para web.</p>
+            <a href="#" class="btn-more">Saber más</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer></footer>
 </body>
-
 </html>
