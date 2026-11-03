@@ -4,106 +4,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="style.css">
+
   <title>PetShop Express - Tu tienda de mascotas</title>
 </head>
 
-<main>
+<body>
 
-  <body>
-    <!-- Encabezado de la página -->
-    <header>
+  <!-- Encabezado de la página -->
+  <header class="header">
 
-      <img src="./image/LogoMascotas.png" class="logo-img" alt="">
+    <a href="index.html">
+      <img src="./image/LogoMascotas.png" class="logo-img" alt="PetShop Express - Inicio">
+    </a>
 
-      <nav class="nav">
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Perros</a></li>
-          <li><a href="#">Gatos</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
+    <nav class="nav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Perros</a></li>
+        <li><a href="#">Gatos</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
 
-    <!-- Banner principal / Hero -->
+  </header>
 
-    <div class="hero">
-      <h1>¡Super Ofertas de Primavera!</h1>
-      <p>Aprovecha hasta un 50% de descuento en piensos seleccionados.</p>
-      <div class="btn-buy" onclick="location.href = 'ofertas.html'">
-        <img src="./image/flecha.png" /> <span>Haz clic aquí</span>
-      </div>
-    </div>
+  <!-- Contenido principal -->
+  <main>
 
-    <!-- Contenido principal -->
+    <!-- Banner principal -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">¡Super Ofertas de Primavera!</h1>
+      <p>
+        Aprovecha hasta un 50% de descuento en piensos seleccionados.
+      </p>
+      <a href="ofertas.html" class="btn-buy">
+        <img src="./image/flecha.png" alt="">
+        <span>Ver ofertas de primavera</span>
+      </a>
+    </section>
+
     <div class="main-content">
-      <h2>Productos Destacados</h2>
 
-      <div class="product-grid">
-        <!-- Producto 1 -->
-        <div class="card">
-          <img class="card-img" src="./image/pienso-perro.jpg"
-            alt="Imagen de un saco de pienso de color verde de 15kg sabor pollo" />
-          <h2>Pienso Premium Perro</h2>
-          <div class="price">
-            35,99 € <span class="badge-promo">¡Solo hoy en rojo!</span>
-          </div>
-          <p>Nutrición completa para perros adultos.</p>
-          <div class="btn-buy" onclick="comprar(1)">Comprar</div>
+      <!-- Productos destacados -->
+      <section aria-labelledby="productos-title">
+        <h2 id="productos-title">Productos destacados</h2>
+        <div class="product-grid">
+          <!-- Producto 1 -->
+          <article class="card">
+
+            <img class="card-img" src="./image/pienso-perro.jpg" alt="Saco de pienso para perros de 15 kg, sabor pollo">
+            <h3 class="titulo">Pienso Premium Perro</h3>
+            <p class="price">
+              35,99 €
+              <span class="badge-promo">¡Oferta solo hoy!</span>
+            </p>
+            <p>Nutrición completa para perros adultos.</p>
+            <button type="button" class="btn-buy" onclick="comprar(1)" aria-label="Comprar Pienso Premium Perro">
+              Comprar
+            </button>
+          </article>
+
+          <!-- Producto 2 -->
+          <article class="card">
+
+            <img class="card-img" src="./image/rarcador_gato.jpg"
+              alt="Rascador para gatos con tres niveles y juguete de bola">
+            <h3 class="titulo">Rascador Árbol Gato</h3>
+            <p class="price">24,50 €</p>
+            <p>Rascador con tres niveles y juguete de bola.</p>
+            <button type="button" class="btn-buy" onclick="comprar(2)" aria-label="Comprar Rascador Árbol Gato">
+              Comprar
+            </button>
+
+          </article>
+
+          <!-- Producto 3 -->
+          <article class="card">
+
+            <img class="card-img" src="./image/comedero.jpg" alt="Comedero de acero inoxidable">
+            <h3 class="titulo">Comedero Acero Inox</h3>
+            <p class="price">8,99 €</p>
+            <p>Antideslizante y lavable en lavavajillas.</p>
+
+            <button type="button" class="btn-buy" onclick="comprar(3)" aria-label="Comprar Comedero Acero Inox">
+              Comprar
+            </button>
+          </article>
         </div>
+      </section>
 
-        <!-- Producto 2 -->
-        <div class="card">
-          <img class="card-img" src="./image/rarcador_gato.jpg" />
-          <h2>Rascador Árbol Gato </h2>
-          <div class="price">24,50 €</div>
-          <p>Rascador con tres niveles y juguete de bola.</p>
-          <div class="btn-buy" onclick="comprar(2)">Comprar</div>
-        </div>
-
-        <!-- Producto 3 -->
-        <div class="card">
-          <img class="card-img" src="./image/comedero.jpg" alt="Foto" />
-          <div class="titulo">
-            Comedero Acero Inox
-          </div>
-          <div class="price">8,99 €</div>
-          <p>Antideslizante y lavable en lavavajillas.</p>
-          <div class="btn-buy" onclick="comprar(3)">Comprar</div>
-        </div>
-      </div>
-
-      <!-- Sección Newsletter -->
-      <div class="newsletter-section">
-        <div class="titulo">
-          Suscríbete a nuestro boletín
-        </div>
-        <p>Recibe ofertas exclusivas en tu correo electrónico.</p>
-
+      <!-- Suscripción al boletín -->
+      <section class="newsletter-section" aria-labelledby="newsletter-title">
+        <h2 id="newsletter-title">Suscríbete a nuestro boletín</h2>
+        <p class="desc">
+          Recibe ofertas exclusivas en tu correo electrónico.
+        </p>
         <form id="newsForm">
-          <p>Correo electrónico:</p>
-          <input type="text" id="emailInput" placeholder="ejemplo@correo.com" style="border: 1px solid red" />
-          <span class="error-text" id="emailError">Formato de correo inválido</span>
-          <br/><br/>
-          <div class="btn-buy">Suscribirme</div>
+          <label for="emailInput">Correo electrónico:</label>
+          <input type="email" id="emailInput" name="email" placeholder="ejemplo@correo.com" autocomplete="email"
+            required>
+          <button type="submit" class="btn-buy">
+            Suscribirme
+          </button>
         </form>
-      </div>
+      </section>
     </div>
-  </body>
-</main>
-<!-- Pie de página -->
-<footer>
-  <p>&copy; 2026 PetShop Express. Todos los derechos reservados.</p>
-  <p>
-    Para más información sobre envíos y devoluciones,
-    <a href="politica.html" style="color: #aaa">haz clic aquí</a>.
-  </p>
-  <div class="redes">
-    <a href="" class="icono"><img src="./image/facebook.png" /></a>
-    <a href="" class="icono"><img src="./image/instagram.png" /></a>
-  </div>
-</footer>
+  </main>
 
-
+  <!-- Pie de página -->
+  <footer>
+    <p>
+      &copy; 2026 PetShop Express. Todos los derechos reservados.
+    </p>
+    <p>
+      Para más información, consulta nuestra
+      <a href="politica.html">política de envíos y devoluciones</a>.
+    </p>
+    <div class="redes">
+      <a href="#" class="icono">
+        <img src="./image/facebook.png" alt="PetShop Express en Facebook">
+      </a>
+      <a href="#" class="icono">
+        <img src="./image/instagram.png" alt="PetShop Express en Instagram">
+      </a>
+    </div>
+  </footer>
+</body>
 </html>
