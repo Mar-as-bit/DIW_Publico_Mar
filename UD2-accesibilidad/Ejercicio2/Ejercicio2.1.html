@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,96 +9,101 @@
 </head>
 
 <main>
-<body>
-  <!-- Encabezado de la página -->
-  <header>
-    <div class="logo">
-      <img src="./image/LogoMascotas.png" class="logo-img" />
-    </div>
-    <div class="nav">
-      <a href="#">Inicio</a>
-      <a href="#">Perros</a>
-      <a href="#">Gatos</a>
-      <a href="#">Contacto</a>
-    </div>
-  </header>
 
-  <!-- Banner principal / Hero -->
-  <div class="hero">
-    <h1>¡Super Ofertas de Primavera!</h1>
-    <p>Aprovecha hasta un 50% de descuento en piensos seleccionados.</p>
-    <div class="btn-buy" onclick="location.href = 'ofertas.html'">
-      <img src="./image/flecha.png" /> <span>Haz clic aquí</span>
+  <body>
+    <!-- Encabezado de la página -->
+    <header>
+
+      <img src="./image/LogoMascotas.png" class="logo-img" alt="">
+
+      <nav class="nav">
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Perros</a></li>
+          <li><a href="#">Gatos</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Banner principal / Hero -->
+
+    <div class="hero">
+      <h1>¡Super Ofertas de Primavera!</h1>
+      <p>Aprovecha hasta un 50% de descuento en piensos seleccionados.</p>
+      <div class="btn-buy" onclick="location.href = 'ofertas.html'">
+        <img src="./image/flecha.png" /> <span>Haz clic aquí</span>
+      </div>
     </div>
-  </div>
 
-  <!-- Contenido principal -->
-  <div class="main-content">
-    <h2>Productos Destacados</h2>
+    <!-- Contenido principal -->
+    <div class="main-content">
+      <h2>Productos Destacados</h2>
 
-    <div class="product-grid">
-      <!-- Producto 1 -->
-      <div class="card">
-        <img class="card-img" src="./image/pienso-perro.jpg" alt="Imagen de un saco de pienso de color verde de 15kg sabor pollo" />
-        <h2>Pienso Premium Perro</h2>
-        <div class="price">
-          35,99 € <span class="badge-promo">¡Solo hoy en rojo!</span>
+      <div class="product-grid">
+        <!-- Producto 1 -->
+        <div class="card">
+          <img class="card-img" src="./image/pienso-perro.jpg"
+            alt="Imagen de un saco de pienso de color verde de 15kg sabor pollo" />
+          <h2>Pienso Premium Perro</h2>
+          <div class="price">
+            35,99 € <span class="badge-promo">¡Solo hoy en rojo!</span>
+          </div>
+          <p>Nutrición completa para perros adultos.</p>
+          <div class="btn-buy" onclick="comprar(1)">Comprar</div>
         </div>
-        <p>Nutrición completa para perros adultos.</p>
-        <div class="btn-buy" onclick="comprar(1)">Comprar</div>
+
+        <!-- Producto 2 -->
+        <div class="card">
+          <img class="card-img" src="./image/rarcador_gato.jpg" />
+          <h2>Rascador Árbol Gato </h2>
+          <div class="price">24,50 €</div>
+          <p>Rascador con tres niveles y juguete de bola.</p>
+          <div class="btn-buy" onclick="comprar(2)">Comprar</div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="card">
+          <img class="card-img" src="./image/comedero.jpg" alt="Foto" />
+          <div class="titulo">
+            Comedero Acero Inox
+          </div>
+          <div class="price">8,99 €</div>
+          <p>Antideslizante y lavable en lavavajillas.</p>
+          <div class="btn-buy" onclick="comprar(3)">Comprar</div>
+        </div>
       </div>
 
-      <!-- Producto 2 -->
-      <div class="card">
-        <img class="card-img" src="./image/rarcador_gato.jpg" />
-        <h2>Rascador Árbol Gato</h2>
-        <div class="price">24,50 €</div>
-        <p>Rascador con tres niveles y juguete de bola.</p>
-        <div class="btn-buy" onclick="comprar(2)">Comprar</div>
-      </div>
-
-      <!-- Producto 3 -->
-      <div class="card">
-        <img class="card-img" src="./image/comedero.jpg" alt="Foto" />
+      <!-- Sección Newsletter -->
+      <div class="newsletter-section">
         <div class="titulo">
-          Comedero Acero Inox
+          Suscríbete a nuestro boletín
         </div>
-        <div class="price">8,99 €</div>
-        <p>Antideslizante y lavable en lavavajillas.</p>
-        <div class="btn-buy" onclick="comprar(3)">Comprar</div>
+        <p>Recibe ofertas exclusivas en tu correo electrónico.</p>
+
+        <form id="newsForm">
+          <p>Correo electrónico:</p>
+          <input type="text" id="emailInput" placeholder="ejemplo@correo.com" style="border: 1px solid red" />
+          <span class="error-text" id="emailError">Formato de correo inválido</span>
+          <br/><br/>
+          <div class="btn-buy">Suscribirme</div>
+        </form>
       </div>
     </div>
-
-    <!-- Sección Newsletter -->
-    <div class="newsletter-section">
-      <div class="titulo">
-        Suscríbete a nuestro boletín
-      </div>
-      <p>Recibe ofertas exclusivas en tu correo electrónico.</p>
-
-      <form id="newsForm">
-        <p>Correo electrónico:</p>
-        <input type="text" id="emailInput" placeholder="ejemplo@correo.com" style="border: 1px solid red" />
-        <span class="error-text" id="emailError">Formato de correo inválido</span>
-        <br /><br />
-        <div class="btn-buy">Suscribirme</div>
-      </form>
-    </div>
-  </div>
-</body>
+  </body>
 </main>
-  <!-- Pie de página -->
-  <footer>
-    <p>&copy; 2026 PetShop Express. Todos los derechos reservados.</p>
-    <p>
-      Para más información sobre envíos y devoluciones,
-      <a href="politica.html" style="color: #aaa">haz clic aquí</a>.
-    </p>
-    <div class="redes">
-      <a href="" class="icono"><img src="./image/facebook.png" /></a>
-      <a href="" class="icono"><img src="./image/instagram.png" /></a>
-    </div>
-  </footer>
+<!-- Pie de página -->
+<footer>
+  <p>&copy; 2026 PetShop Express. Todos los derechos reservados.</p>
+  <p>
+    Para más información sobre envíos y devoluciones,
+    <a href="politica.html" style="color: #aaa">haz clic aquí</a>.
+  </p>
+  <div class="redes">
+    <a href="" class="icono"><img src="./image/facebook.png" /></a>
+    <a href="" class="icono"><img src="./image/instagram.png" /></a>
+  </div>
+</footer>
 
 
 </html>
